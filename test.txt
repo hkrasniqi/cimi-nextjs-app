@@ -1,2 +1,2 @@
-This is my new text file
+This is my new text file test
 for my new branch
