@@ -2,9 +2,9 @@ name: build
 ​
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 ​
 jobs:
 ​
@@ -32,5 +32,5 @@ jobs:
         REPOSITORY: cimi-nextjs-app
         IMAGE_TAG: ${{ github.sha }}
       run: | 
-        docker build . --file dockerfile --tag $REGISTRY/$REPOSITORY:$IMAGE_TAG
+        docker build . --file Dockerfile --tag $REGISTRY/$REPOSITORY:$IMAGE_TAG
         docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
