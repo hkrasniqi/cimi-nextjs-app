@@ -1,0 +1,17 @@
+FROM node
+
+WORKDIR /usr/cimi-nextjs-app/
+
+COPY package*.json /usr/cimi-nextjs-app/
+
+RUN npm install
+
+COPY . /usr/cimi-nextjs-app/
+
+RUN npm run build
+
+COPY . /usr/cimi-nextjs-app/
+
+EXPOSE 3000
+
+CMD ["npm", "run", "start"]
